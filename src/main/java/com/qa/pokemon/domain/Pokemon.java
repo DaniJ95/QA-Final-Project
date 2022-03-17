@@ -3,6 +3,8 @@ package com.qa.pokemon.domain;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity //Marking this class for SQL
 public class Pokemon {
@@ -19,8 +21,9 @@ public class Pokemon {
 	 * special attack int
 	 * special Defence int
 	 */
-
+@Id
 	private Long id;
+@GeneratedValue
 	private String name;
 	private String type;
 	private String height;

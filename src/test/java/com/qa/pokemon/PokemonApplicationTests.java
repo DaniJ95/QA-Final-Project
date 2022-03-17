@@ -8,6 +8,6 @@ class PokemonApplicationTests {
 
 	@Test
 	void contextLoads() {
-	}
+}
 
 }

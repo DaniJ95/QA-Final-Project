@@ -1,0 +1,1 @@
+INSERT INTO pokemon(`name`,`type`,`height`,`weight`,`gender`,`hp`,`attack`,`defence`,`specialattack`,`specialdefence`) VALUES('Bulbasaur','Grass','3ft','1tonne','female','1000','300','213','432','300');
