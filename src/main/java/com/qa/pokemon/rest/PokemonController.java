@@ -33,32 +33,27 @@ public class PokemonController {
 	public ResponseEntity<Pokemon> createPokemon(@RequestBody Pokemon a) {
 		return new ResponseEntity<Pokemon>(this.service.create(a), HttpStatus.CREATED);
 	}
-	
+
 	//Read
-	
+
 	@GetMapping("/readAll")
 	public List<Pokemon> readPokemon() {
 		return this.service.read();
 	}
-	
+
 	@GetMapping("/readById/{id}")
 	public Pokemon getById(@PathVariable Long id) {
 		return this.service.readOne(id);
 	}
-	
+
 	//Update
-	
+
 	@PutMapping("/update/{id}")
 	public Pokemon update(@PathVariable Long id, @RequestBody Pokemon updated) {
 		return this.service.update(id, updated);
 	}
 	
-	//Delete
-	
-	@DeleteMapping("/delete")
-	public Pokemon delete(@PathParam("id") Long id) {
-		return this.service.delete(id);
-	}
+	//Delete 
 	
 	@DeleteMapping("/remove")
 	public boolean remove(@PathParam("id") Long id) {

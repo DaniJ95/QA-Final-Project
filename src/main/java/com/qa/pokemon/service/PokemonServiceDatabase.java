@@ -47,12 +47,6 @@ public class PokemonServiceDatabase {
 		return this.repo.save(found);
 	}
 	
-	public Pokemon delete(Long id) {
-		Optional<Pokemon> toDelete = this.repo.findById(id);
-		this.repo.deleteById(id);
-		return toDelete.orElse(null);
-	}
-	
 	public boolean remove(Long id) {
 		this.repo.deleteById(id);
 		return !this.repo.existsById(id);
