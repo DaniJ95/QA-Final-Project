@@ -56,17 +56,17 @@ public class PokemonControllerTest {
 	}
 
 
-
+	@Test
 	void readTest() throws Exception {
 
-		Pokemon readPokemon = new Pokemon(1L, "Gengar", "Ghost", "5ft", "0kg", "Male", 200, 100, 70, 120, 75);
-
-		String readPokemonJSON = this.map.writeValueAsString(readPokemon);
+		Pokemon readPokemon = new Pokemon(1L, "Bulbasaur", "Grass", "3ft", "1tonne", "female", 1000, 300, 213, 432, 300);
+		String readPokemonJSON = "[" + this.map.writeValueAsString(readPokemon) + "]";
+		
 		RequestBuilder mockRequest = get("/readAll");
 
 		ResultMatcher checkStatus = status().isOk();
 		ResultMatcher checkBody = content().json(readPokemonJSON);
-
+				
 		this.mock.perform(mockRequest).andExpect(checkStatus).andExpect(checkBody);
 	}
 
