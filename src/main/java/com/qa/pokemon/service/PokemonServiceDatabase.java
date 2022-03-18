@@ -34,16 +34,79 @@ public class PokemonServiceDatabase {
 	public Pokemon update(Long id, Pokemon y) {
 		Optional<Pokemon> optPkm = this.repo.findById(id);
 		Pokemon found = optPkm.get();
-		found.setName(y.getName());
-		found.setType(y.getType());
-		found.setHeight(y.getHeight());
-		found.setWeight(y.getWeight());
-		found.setGender(y.getGender());
-		found.setHp(y.getHp());
-		found.setAttack(y.getAttack());
-		found.setDefence(y.getDefence());
-		found.setSpecialattack(y.getSpecialattack());
-		found.setSpecialdefence(y.getSpecialdefence());
+		
+		String name;
+		String type;
+		String height;
+		String weight;
+		String gender;
+		int hp;
+		int attack;
+		int defence;
+		int specialattack;
+		int specialdefence;
+		
+		if (y.getName() == null) {
+			name = optPkm.get().getName();
+		} else {
+			name = y.getName();
+		}
+		if (y.getType() == null) {
+			type = optPkm.get().getType();
+		} else {
+			type = y.getType();
+		}
+		if (y.getHeight() == null) {
+			height = optPkm.get().getHeight();
+		} else {
+			height = y.getHeight();
+		}
+		if (y.getWeight() == null) {
+			weight = optPkm.get().getWeight();
+		} else {
+			weight = y.getWeight();
+		}
+		if (y.getGender() == null) {
+			gender = optPkm.get().getGender();
+		} else {
+			gender = y.getGender();
+		}
+		if (y.getHp() == 0) {
+			hp = optPkm.get().getHp();
+		} else {
+			hp = y.getHp();
+		}
+		if (y.getAttack() == 0) {
+			attack = optPkm.get().getAttack();
+		} else {
+			attack = y.getAttack();
+		}
+		if (y.getDefence() == 0) {
+			defence = optPkm.get().getDefence();
+		} else {
+			defence = y.getDefence();
+		}
+		if (y.getSpecialattack() == 0) {
+			specialattack = optPkm.get().getSpecialattack();
+		} else {
+			specialattack = y.getSpecialattack();
+		}
+		if (y.getSpecialdefence() == 0) {
+			specialdefence = optPkm.get().getSpecialdefence();
+		} else {
+			specialdefence = y.getSpecialdefence();
+		}
+		
+		found.setName(name);
+		found.setType(type);
+		found.setHeight(height);
+		found.setWeight(weight);
+		found.setGender(gender);
+		found.setHp(hp);
+		found.setAttack(attack);
+		found.setDefence(defence);
+		found.setSpecialattack(specialattack);
+		found.setSpecialdefence(specialdefence);
 		return this.repo.save(found);
 	}
 	
