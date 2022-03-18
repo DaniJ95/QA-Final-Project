@@ -48,4 +48,4 @@ I would also streamline more of my code and make it more effecient, potentially 
 
 ## Screenshot of your test results, including coverage report.
 
-![Eclipse showing 11/11 passed tests with 84% code coverage](screenshots/coveragepng)
+![Eclipse showing 11/11 passed tests with 84% code coverage](screenshots/coverage.png)
